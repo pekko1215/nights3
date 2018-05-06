@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+}
+
+#pixiview {
+    left: 123px;
+    top: 73px;
+    position: absolute;
+}
+
+#creditSegment {
+    position: absolute;
+    left: 584px;
+    top: 361px;
+    width: 131px;
+    height: 74px;
+}
+
+#paySegment {
+    position: absolute;
+    left: 130px;
+    top: 361px;
+    width: 131px;
+    height: 74px;
+}
+
+#effectSegment {
+    position: absolute;
+    left: 796px;
+    top: 367px;
+    height: 74px;
+    width: 188px;
+}
+
+#rightneko {
+    position: absolute;
+    left: 821px;
+    top: 16px;
+    width: 114px;
+    height: 97px;
+}
+
+#leftneko {
+    position: absolute;
+    left: 11px;
+    top: 12px;
+    width: 114px;
+    height: 97px;
+    transform: scale(-1, 1);
+}
+
+.GameData {
+    position: absolute;
+    bottom: 0px;
+    background-color: black;
+    color: green;
+    left: 0px;
+    width: 100%;
+    font-size: 32pt;
+}
+
+table {
+    border: double;
+}
+
+td,
+tr,
+th {
+    border: solid 1px;
+}
+
+#moon {
+    position: absolute;
+    left: 789px;
+    top: 3px;
+}
+
+#fire {
+    position: absolute;
+    left: 359px;
+    top: 327px;
+    filter: brightness(20%);
+}
+
+#nabi1{
+    position: absolute;
+    left: 796px;
+    top: 133px;
+}
+#nabi2{
+    position: absolute;
+    left: 796px;
+    top: 191px;
+}
+#nabi3{
+    position: absolute;
+    left: 796px;
+    top: 248px;
+}
