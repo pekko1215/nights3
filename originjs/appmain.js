@@ -168,6 +168,7 @@ function main() {
     })
     slotmodule.on("bonusend", () => {
         sounder.stopSound("bgm")
+        setGamemode("normal")
     });
     slotmodule.on("payend", function() {
         if (gamemode != "normal") {
