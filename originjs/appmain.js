@@ -58,20 +58,20 @@ function main() {
                             slotmodule.freeze();
                             sounder.playSound("bonuspay", false, () => {
                                 sounder.playSound("moonstart", false, () => {
+                                    if (hyperzone) {
+                                        sbig = true;
+                                        hyperzone = 3;
+                                    } else {
+                                        hyperzone = !rand(3) ? 3 : 0;
+                                    }
+                                    if (hyperzone == 3) {
+                                        hypergame = 50;
+                                    }
+                                    var BGM = "NBIG"
+                                    if (sbig) {
+                                        BGM = "SBIG"
+                                    }
                                     sounder.playSound(["moonfailed", "moonsuccess"][sbig ? 1 : 0], false, () => {
-                                        if (hyperzone) {
-                                            sbig = true;
-                                            hyperzone = 3;
-                                        } else {
-                                            hyperzone = !rand(3) ? 3 : 0;
-                                        }
-                                        if (hyperzone == 3) {
-                                            hypergame = 50;
-                                        }
-                                        var BGM = "NBIG"
-                                        if (sbig) {
-                                            BGM = "SBIG"
-                                        }
                                         sounder.playSound(BGM, true)
                                         bonusdata = {
                                             bonusget: 300,
@@ -156,10 +156,11 @@ function main() {
             setGamemode('normal');
             sounder.stopSound("bgm")
             segments.effectseg.reset();
-        }
-        if (gamemode == "reg" || gamemode == 'jac') {
-            if (bonusdata.jacgamecount == 0 || bonusflag.jacgetcount == 0) {
-                setGamemode('big');
+        }else{
+            if (gamemode == "reg" || gamemode == 'jac') {
+                if (bonusdata.jacgamecount == 0 || bonusflag.jacgetcount == 0) {
+                    setGamemode('big');
+                }
             }
         }
         if (nexter) {
@@ -717,6 +718,28 @@ function main() {
                             if (rand(3)) {
                                 effectReserve = {
                                     color: 'red',
+                                    sound: 'low'
+                                }
+                                if (!rand(2)) {
+                                    effectReserve.sound = 'high'
+                                }
+                            }
+                        }
+                        break
+                    case 'ベル':
+                        if (!rand(6)) {
+                            effectReserve = {
+                                color: 'yellow',
+                                sound: 'low'
+                            }
+                            if (!rand(4)) {
+                                effectReserve.sound = 'high'
+                            }
+                        }
+                        if (bonusflag != "none") {
+                            if (rand(3)) {
+                                effectReserve = {
+                                    color: 'green',
                                     sound: 'low'
                                 }
                                 if (!rand(2)) {
