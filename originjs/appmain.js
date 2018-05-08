@@ -63,6 +63,7 @@ function main() {
                                         hyperzone = 3;
                                     } else {
                                         hyperzone = !rand(3) ? 3 : 0;
+                                        if(hyperzone){sbig = true}
                                     }
                                     if (hyperzone == 3) {
                                         hypergame = 50;
