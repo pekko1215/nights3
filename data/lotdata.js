@@ -18,7 +18,7 @@ var lotdata = {
     "big":[
         {
             name:"JACIN",
-            value:1/11
+            value:1/8
         }
     ],
     "jac":[

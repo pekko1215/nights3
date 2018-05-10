@@ -75,7 +75,7 @@ function main() {
                                     sounder.playSound(["moonfailed", "moonsuccess"][sbig ? 1 : 0], false, () => {
                                         sounder.playSound(BGM, true)
                                         bonusdata = {
-                                            bonusget: 300,
+                                            bonusget: 301,
                                             geted: 0
                                         }
                                         setGamemode('big');
@@ -86,7 +86,6 @@ function main() {
                             })
                             break;
                         case "チェリー":
-                        case "重複リプレイ":
                             sounder.playSound("cherrypay");
                             matrix = matrix.map((arr) => {
                                 arr[1] = 0;
@@ -97,6 +96,7 @@ function main() {
                                 slotmodule.setFlash(flashdata.default, 20)
                                 slotmodule.setFlash(replaceMatrix(flashdata.default, matrix, colordata.LINE_F, null), 20, arguments.callee)
                             })
+                        case "重複リプレイ":
                             slotmodule.freeze()
                             var fflag = true;
                             slotmodule.once("pressAllmity", () => {
@@ -153,12 +153,12 @@ function main() {
                     changeBonusSeg()
             }
         })
-        if ((gamemode == "reg" || gamemode == 'jac' || gamemode == "big") && bonusdata.bonusgame == 0) {
+        if ((gamemode == "reg" || gamemode == 'jac' || gamemode == "big")&&bonusdata.bonusget <= 0) {
             setGamemode('normal');
             sounder.stopSound("bgm")
             segments.effectseg.reset();
         }else{
-            if (gamemode == "reg" || gamemode == 'jac') {
+            if ((gamemode == "reg" || gamemode == 'jac')) {
                 if (bonusdata.jacgamecount == 0 || bonusflag.jacgetcount == 0) {
                     setGamemode('big');
                 }
@@ -378,7 +378,7 @@ function main() {
             case "reg":
             case "jac":
                 ret = "JAC15枚" + rand(3, 1);
-                if (!rand(3)) {
+                if (rand(3)) {
                     jacflag = true
                 }
                 break;
@@ -584,22 +584,15 @@ function main() {
             case 'big':
                 gamemode = 'big';
                 slotmodule.once("payend", function() {
-                    slotmodule.setLotMode(1)
                 });
+                slotmodule.setLotMode(1)
                 slotmodule.setMaxbet(2);
-                break;
-            case 'reg':
-                gamemode = 'reg';
-                slotmodule.once("payend", function() {
-                    slotmodule.setLotMode(2)
-                });
-                slotmodule.setMaxbet(1);
                 break;
             case 'jac':
                 gamemode = 'jac';
                 slotmodule.once("payend", function() {
-                    slotmodule.setLotMode(2)
                 });
+                slotmodule.setLotMode(2)
                 slotmodule.setMaxbet(1);
                 break;
         }
