@@ -441,8 +441,8 @@ function main() {
     var okure = false;
     var sounder = new Sounder();
     sounder.addFile("sound/stop.wav", "stop").addTag("se");
-    sounder.addFile("sound/start.wav", "start").addTag("se");
-    sounder.addFile("sound/bet.wav", "3bet").addTag("se");
+    sounder.addFile("sound/start.wav", "start").addTag("se").setVolume(0.5);
+    sounder.addFile("sound/bet.wav", "3bet").addTag("se").setVolume(0.5);
     sounder.addFile("sound/yokoku_low.mp3", "yokoku_low").addTag("se");
     sounder.addFile("sound/yokoku_high.mp3", "yokoku_high").addTag("se");
     sounder.addFile("sound/pay.wav", "pay").addTag("se");
