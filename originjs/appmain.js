@@ -468,11 +468,11 @@ function main() {
     sounder.setVolume("se", 0.2)
     sounder.setVolume("bgm", 0.2)
     $(window).click(function sounderEvent(){
+        if(window.sounder){return}
         sounder.loadFile(function() {
             window.sounder = sounder
             console.log(sounder)
         })
-        $(window).off(sounderEvent)
     })
     var normalLotter = new Lotter(lotdata.normal);
     var bigLotter = new Lotter(lotdata.big);
