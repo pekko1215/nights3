@@ -471,7 +471,7 @@ function main() {
         sounder.loadFile(function() {
             window.sounder = sounder
             console.log(sounder)
-        }
+        })
         $(window).off(sounderEvent)
     })
     var normalLotter = new Lotter(lotdata.normal);
