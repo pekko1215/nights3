@@ -467,9 +467,12 @@ function main() {
     sounder.addFile("sound/bpay.wav", "bpay").addTag("se").setVolume(0.5);
     sounder.setVolume("se", 0.2)
     sounder.setVolume("bgm", 0.2)
-    sounder.loadFile(function() {
-        window.sounder = sounder
-        console.log(sounder)
+    $(window).click(function sounderEvent(){
+        sounder.loadFile(function() {
+            window.sounder = sounder
+            console.log(sounder)
+        }
+        $(window).off(sounderEvent)
     })
     var normalLotter = new Lotter(lotdata.normal);
     var bigLotter = new Lotter(lotdata.big);
