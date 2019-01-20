@@ -62,7 +62,7 @@ function main() {
                                         sbig = true;
                                         hyperzone = 3;
                                     } else {
-                                        hyperzone = !rand(3) ? 3 : 0;
+                                        hyperzone = !rand(5) ? 3 : 0;
                                         if(hyperzone){sbig = true}
                                     }
                                     if (hyperzone == 3) {
@@ -122,8 +122,8 @@ function main() {
                     if (d.name == "JACIN") {
                         setGamemode('jac');
                         bonusdata.jacincount--;
-                        bonusdata.jacgamecount = 4;
-                        bonusdata.jacgetcount = 4;
+                        bonusdata.jacgamecount = 6;
+                        bonusdata.jacgetcount = 6;
                         jacflag = false
                     }
                     changeBonusSeg()
