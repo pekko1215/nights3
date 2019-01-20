@@ -6,7 +6,7 @@ var paneldata = {
 		height:634,
 		width:800,
 		defaultFrash:flashdata.default,
-		background:0xffffff
+		background:0x000
 
 	},
 	width:634,

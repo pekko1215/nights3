@@ -102,7 +102,10 @@ Sounder.prototype.playSound = function (tag, loop, callback, loopstart, loopend)
             source.loopEnd = loopend || f.buffer.duration;
             that.loops.push({tag: f.tag, source: source})
         } else {
-            setTimeout(callback, f.buffer.duration * 1000);
+            if(callback){
+                setTimeout(callback, f.buffer.duration * 1000);
+                callback = null;
+            }
         }
         var volume = 1;
         var base = source;

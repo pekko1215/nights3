@@ -75,7 +75,7 @@ function main() {
                                     sounder.playSound(["moonfailed", "moonsuccess"][sbig ? 1 : 0], false, () => {
                                         sounder.playSound(BGM, true)
                                         bonusdata = {
-                                            bonusget: 301,
+                                            bonusget: 351,
                                             geted: 0
                                         }
                                         setGamemode('big');

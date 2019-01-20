@@ -12,7 +12,7 @@ var YakuData = [
     },
     {
         name: "ベル",
-        pay: [6, 0, 3]
+        pay: [6, 0, 6]
     },
     {
         name: "スイカ",
@@ -124,7 +124,7 @@ var YakuData = [
     },
     {
         name: "ベル",
-        pay: [0, 0, 3]
+        pay: [0, 0, 6]
     },
     {
         name: "ダミー",
